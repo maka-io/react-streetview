@@ -29,6 +29,14 @@ class ReactStreetview extends React.Component {
 					this.props.onPovChanged(this.streetView.getPov());
 				}
 			});
+			this.streetView.addListener('links_changed',() => {
+				if (this.props.pov) {
+					this.streetView.setPov({                   
+						heading: this.props.pov.heading,
+						pitch: 	 this.props.pov.pitch
+					});
+				}
+			});
 		}
 	}
 
@@ -58,7 +66,8 @@ ReactStreetview.propTypes = {
 	apiKey: PropTypes.string.isRequired,
 	streetViewPanoramaOptions: PropTypes.object.isRequired,
 	onPositionChanged: PropTypes.func,
-	onPovChanged: PropTypes.func
+	onPovChanged: PropTypes.func,
+	pov: PropTypes.object
 };
 
 ReactStreetview.defaultProps = {
