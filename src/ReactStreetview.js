@@ -30,13 +30,13 @@ class ReactStreetview extends React.Component {
 				}
 			});
 			this.streetView.addListener('pov_changed',() => {
-				console.log(this.props.pov);
-				if (this.props.pov) {
+				console.log(this.props);
+				/*if (this.props) {
 					this.streetView.setPov({                   
 						heading: this.props.pov.heading,
 						pitch: 	 this.props.pov.pitch
 					});
-				}
+				}*/
 			});
 		}
 	}
