@@ -29,7 +29,7 @@ class ReactStreetview extends React.Component {
 					this.props.onPovChanged(this.streetView.getPov());
 				}
 			});
-			this.streetView.addListener('links_changed',() => {
+			this.streetView.addListener('pov_changed',() => {
 				console.log(this.props.pov);
 				if (this.props.pov) {
 					this.streetView.setPov({                   
